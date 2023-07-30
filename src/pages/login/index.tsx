@@ -11,6 +11,7 @@ import styled from "styled-components";
 import VisibilityOffOutlinedIcon from '@mui/icons-material/VisibilityOffOutlined';
 import { LoginApi } from '../../services/loginApi';
 import './index.css'
+import logoImage from '../../assets/images/logo-image.png'
 
 const LoginStyled = styled.div`
 display: flex;
@@ -39,7 +40,7 @@ display: flex;
 
 export const Login = () =>{
     const navigate = useNavigate();
-    const [isLoading, setIsLoading] = useState(false);
+    const [loading, setLoading] = useState(false);
     const [showPass, setShowPass] = useState(false);
     const { register, handleSubmit, formState: { errors } } = useForm();
 
@@ -48,14 +49,14 @@ export const Login = () =>{
     }
 
     const onSubmit = async (data: any) => {
-        try{ //Todo: Have to look at it again
-          setIsLoading(true);
-          const response =await LoginApi(data);
-          localStorage.setItem('jwtToken',response.access_token);
-          setIsLoading(false);
-          navigate('/home')
-        } catch(error) {
-          setIsLoading(false);
+        try {
+            setLoading(true);
+            const response = await LoginApi(data);
+            localStorage.setItem('jwtToken',response.access_token);
+            setLoading(false);
+            navigate('/home')
+        } catch (error) {
+            setLoading(false);
             console.log(error);
         }
     };
@@ -63,6 +64,19 @@ export const Login = () =>{
         <>
             <Box sx={{ backgroundColor:'#f4eeee'}}>
                 <LoginStyled>
+                <Stack sx={{     
+                        padding: '13px',
+                        paddingLeft: '50px',
+                        alignItems: 'flex-start',
+                        backgroundColor: 'white ',
+                        position: 'absolute',
+                        top: '0',
+                        width: '-webkit-fill-available'
+                    }}>
+                        <div>
+                            <img height='30px' src={logoImage} alt='' />
+                        </div>
+                </Stack>
                     <form style={{padding: '34px', borderRadius:'8px'}} onSubmit={handleSubmit(onSubmit)}>
                         <Box sx={{width: '100%', height: '100%', display: 'flex' ,gap: '24px', flexDirection: 'column'}}>
                             <Stack  spacing={2}>
@@ -115,7 +129,7 @@ export const Login = () =>{
                         <Stack sx={{    width: '100%'}}>
                             <Button sx={{    width: '100px'}} type="submit" variant="contained" color="primary">
                                 {
-                                    isLoading ?
+                                    loading ?
                                         <CircularProgress sx={{color: 'white'}} size={25} /> :
                                         <span style={{ textTransform: 'initial' }}>Log in</span>
                                 }

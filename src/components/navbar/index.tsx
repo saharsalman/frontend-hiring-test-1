@@ -4,6 +4,8 @@ import { useNavigate } from 'react-router';
 import styled from "styled-components";
 import './index.css'
 
+import logoImage from '../../assets/images/logo-image.png'
+
 
 export const Navbar = () => {
   const navigate = useNavigate();
@@ -24,7 +26,9 @@ export const Navbar = () => {
             justifyContent: 'space-between',
             alignItems: 'center',
           }}>
-            <img src='../../../public/TT-Logo.png' alt='Turing Technologies' height={30}></img>
+            <div>
+              <img height='30px' src={logoImage} alt='' />
+            </div>
             <Button className='logout-btn' onClick={Logout} variant="outlined" >Log out</Button>
           </Box>
         </Box>

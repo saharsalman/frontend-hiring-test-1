@@ -6,14 +6,14 @@ import {Box,Button, Divider} from '@mui/material';
 import Typography from '@mui/material/Typography';
 import styled from "styled-components";
 import { addNote, getListById } from '../../services/callListApi';
-import { AddNotesDialogPropsType, TechnologyDataType } from '../types';
+import { AddNotesDialogPropsType, CallListDataType } from '../types';
 import './index.css';
 import CloseIcon from '@mui/icons-material/Close';
 
 export const AddNotesDialog = ({isDialogOpen, onClose, id}: AddNotesDialogPropsType) => {
     const [note, setNote] = useState<string>();
     const [isLoading, setIsLoading] = useState(false);
-    const [technology, setTechnology] = useState<TechnologyDataType>();
+    const [technology, setTechnology] = useState<CallListDataType>();
 
     const handleSave = async() =>{
         setIsLoading(true);
@@ -35,7 +35,6 @@ export const AddNotesDialog = ({isDialogOpen, onClose, id}: AddNotesDialogPropsT
       border: 'none',
       borderRadius: '8px',
       boxShadow: 24,
-
       overflow: 'overlay'
     };
 
@@ -51,7 +50,6 @@ export const AddNotesDialog = ({isDialogOpen, onClose, id}: AddNotesDialogPropsT
         console.log('id',id);
         const token = localStorage.getItem('jwtToken') || '';
         getTechnology(token);
-      // eslint-disable-next-line react-hooks/exhaustive-deps
       },[id])
 
   return (

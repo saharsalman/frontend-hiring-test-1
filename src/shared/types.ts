@@ -21,13 +21,13 @@ export interface TableDataType {
 
 }
 
-export type AddNotesDialogPropsType = {
+export interface AddNotesDialogPropsType {
     onClose: any;
     isDialogOpen: boolean;
     id: string;
 }
 
-export interface TechnologyDataType {
+export interface CallListDataType {
     id: string;
     duration: number;
     is_archived: boolean;
@@ -40,7 +40,7 @@ export interface TechnologyDataType {
     notes?: [];
 }
 
-export type PaginationWrapperPropsType = {
+export interface PaginationWrapperPropsType {
     setOffset: any;
     totalPages: number;
 }
