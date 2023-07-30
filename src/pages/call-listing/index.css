@@ -1,0 +1,55 @@
+.MuiInput-input:focus {
+    background-color: transparent !important;
+}
+.head {
+    background-color: #cecece99 !important;
+}
+.table-wrapper {
+    border: 1px solid #cecece !important;
+}
+.table-heading {
+    font-family: AvenirLTStd-black !important;
+}
+.answered {
+    color: #43d2c3 !important;
+    text-transform: capitalize;
+}
+.missed {
+    text-transform: capitalize;
+    color: #ce3250 !important;
+}
+.voicemail {
+    text-transform: capitalize;
+    color: #325ae7 !important;
+}
+.direction {
+    color: #325ae7 !important;
+    text-transform: capitalize;
+}
+.total-seconds::before {
+    content: '(';
+}
+.total-seconds::after {
+    content: ')';
+}
+.total-seconds {
+    color: #325ae7 !important;
+}
+.add-note-btn {
+    background-color: blue !important;
+    color: white !important;
+    text-transform: capitalize !important;
+    width: 100px !important;
+    border-radius: 8px !important;
+}
+.pagination {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.MuiList-padding {
+    padding: 8px !important;
+}

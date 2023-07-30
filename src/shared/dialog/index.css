@@ -1,0 +1,40 @@
+.title {
+    font-family:'AvenirLTStd-black' !important;
+    font-size: 20px !important;
+}
+.call-id {
+    font-size: 14px !important;
+    color: blue !important;
+}
+.header {
+    padding: 20px !important;
+    display: flex;
+    justify-content: space-between;
+}
+.answered {
+    color: #43d2c3 !important;
+    text-transform: capitalize;
+}
+.missed {
+    text-transform: capitalize;
+    color: #ce3250 !important;
+}
+.voicemail {
+    text-transform: capitalize;
+    color: #325ae7 !important;
+}
+.content {
+    padding: 20px !important;
+}
+.save-button {
+    height: 45px !important;
+    background-color: blue !important;
+    color: white !important;
+    border-radius: 8px !important;
+    text-transform: capitalize !important;
+}
+.Mui-disabled {
+    color: gray !important;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    background-color: rgba(0, 0, 0, 0.12) !important;
+}
